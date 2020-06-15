@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+
+            * {
+            margin: 0;
+            padding: 0;
+        }
+			.shang{
+				background-color:#555555;
+				width:100%;
+				height:70px;
+			}
+			.zhong{
+					width:78%;
+					height:420px;
+					border:1px solid black;
+					margin-left:10%;
+			}
+			.zhong1{
+				margin:20px 20px 0px 20px;
+				width:96%;
+				height:40px;
+				border:1px solid black;
+				border-style:solid solid none solid;
+			}
+			.zhong2{
+				margin:0px 20px 20px 20px;
+				width:96%;
+				height:300px;
+				border:1px solid black;
+			}
+			.submit{
+				margin:0px 0px 0px 20px;
+				width:5%;
+				height:30px;
+				border-radius:5px;
+				border-style:none;
+				background:#009ACD;
+				font-size:14px;
+			}
+			textarea{
+				resize: none;
+			}
+			.table{
+				margin:20px 0px 0px 20px;
+				margin-left:10%;
+				width:78.1%;
+				text-align:center;
+			}
+			header("location:huifutianjia.php?");
+        </style>
+    </head>
+    <body>
+<?php
+$id=$_GET['id'];
+?>	
+<div>
+ <div class="shang">
+    		<img src="image/logo.jpg" height="70px" width="90px" style="margin-left:10%;">
+    	</div>
+    	<div class="zhong">
+    	<form action="huifutianjia.php?id=<?php echo "$id"; ?>" method="post">
+    		<div class="zhong1" ></div>
+    			<textarea class="zhong2" name="text"></textarea>
+    		<input  class="submit" type="submit" name="submit"  value="回复" >
+    	</form>
+    	</div>
+    	<div>
+    		<table>
+    		<table class="table" border="1">
+    	 	<th>name</th>
+    	 	<th>dizhi</th>
+    	 	<th>sname</th>
+    		<?php foreach ($rows as $v) {?>
+    			<tr>
+	    			<td><?php echo $v['id'];?></td>
+	    			<td><?php echo $v['name'];?></td>
+	    			<td><?php echo $v['dizhi'];?></td>
+    			</tr>
+    		<?php }?>
+    		</table>
+    	</div>
+    </div>
+    </body>
+</html>
